@@ -1,0 +1,14 @@
+[Unit]
+Description=Power Tunings for Low Power Consumption
+After=multi-user.target
+RequiresMountsFor=/opt
+
+[Service]
+Type=oneshot
+ExecStart=/opt/power-optimization.sh
+RemainAfterExit=true
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
